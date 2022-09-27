@@ -13,6 +13,15 @@ button.addEventListener("click", function () {
     list.appendChild(newButton);
     newButton.innerText = "Delete"
     // ADD CHECKBOX to be generated when added to list
+    const checkbox = document.createElement('input');
+    checkbox.type = "checkbox"
+    checkbox.addEventListener("change", function (){
+        // completed items move to completed tasks (cList)
+        ul.removeChild(newToDo);
+        const completedList = document.getElementById("completed-list");
+        completedList.appendChild(newToDo);
+    });
+    newToDo.appendChild(checkbox);
 
     //button to delete item from list
     if (newButton.addEventListener("click", function () {
@@ -20,9 +29,6 @@ button.addEventListener("click", function () {
         list.removeChild(newToDo);
         this.remove(newButton);
     }));
-
-    // completed items move to completed tasks (cList)
-
 });
 
 // show date button
@@ -32,10 +38,3 @@ dateButton.addEventListener("click", function () {
     var date = new Date();
     document.getElementById("show-date").innerHTML = date;
 });
-
-// var checkComplete = document.querySelector("#list");
-// checkComplete.addEventListener("click", function(complete){
-//     if(
-//         complete.target.
-//     )
-// }) 
