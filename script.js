@@ -15,13 +15,14 @@ button.addEventListener("click", function () {
     // ADD CHECKBOX to be generated when added to list
     const checkbox = document.createElement('input');
     checkbox.type = "checkbox"
+    newToDo.appendChild(checkbox);
     checkbox.addEventListener("change", function (){
         // completed items move to completed tasks (cList)
         ul.removeChild(newToDo);
         const completedList = document.getElementById("completed-list");
         completedList.appendChild(newToDo);
     });
-    newToDo.appendChild(checkbox);
+    
 
     //button to delete item from list
     if (newButton.addEventListener("click", function () {
